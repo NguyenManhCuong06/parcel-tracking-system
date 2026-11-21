@@ -1,0 +1,75 @@
+# Git attributes for Parcel Tracking System
+# Tham khảo: https://github.com/github/gitattributes/blob/main/Dotnet.gitattributes
+
+# ============================================================
+# Text files - normalize line endings to LF in repo
+# ============================================================
+* text=auto eol=lf
+
+# Explicit text files
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+*.props text eol=lf
+*.targets text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.config text eol=lf
+*.txt text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.bat text eol=lf
+*.cmd text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+*.editorconfig text eol=lf
+*.dockerignore text eol=lf
+Dockerfile* text eol=lf
+
+# ============================================================
+# Binary files - no diff, no line ending conversion
+# ============================================================
+*.dll binary
+*.exe binary
+*.pdb binary
+*.snupkg binary
+*.nupkg binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# ============================================================
+# Diff drivers for better diffs
+# ============================================================
+*.cs diff=csharp
+*.csproj diff=csharp
+*.sln diff=csharp
+
+# ============================================================
+# Merge strategy for generated files
+# ============================================================
+*.generated.cs merge=union
+*.g.cs merge=union
+*.designer.cs merge=union
+
+# ============================================================
+# Lock files - keep LF
+# ============================================================
+package-lock.json text eol=lf
+pnpm-lock.yaml text eol=lf
+yarn.lock text eol=lf
+
+# ============================================================
+# Hook scripts - ensure LF
+# ============================================================
+.githooks/* text eol=lf
+scripts/*.sh text eol=lf

@@ -1,0 +1,117 @@
+# EditorConfig for Parcel Tracking System
+# Tham khảo: https://github.com/dotnet/runtime/blob/main/.editorconfig
+# Được tất cả IDE hiện đại hỗ trợ (VS Code, Visual Studio, Rider, VS, etc.)
+
+root = true
+
+# ============================================================
+# Global settings
+# ============================================================
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# ============================================================
+# .NET / C# settings
+# ============================================================
+[*.{cs,csproj,props,targets,sln}]
+indent_style = space
+indent_size = 4
+
+# ============================================================
+# JSON / YAML / XML
+# ============================================================
+[*.{json,yml,yaml,xml,config}]
+indent_style = space
+indent_size = 2
+
+# ============================================================
+# Markdown / Documentation
+# ============================================================
+[*.md]
+trim_trailing_whitespace = false
+
+# ============================================================
+# Shell / Batch / PowerShell scripts
+# ============================================================
+[*.{sh,ps1,bat,cmd}]
+indent_style = space
+indent_size = 4
+
+# ============================================================
+# Docker
+# ============================================================
+[Dockerfile*]
+indent_style = space
+indent_size = 2
+
+# ============================================================
+# Git config
+# ============================================================
+[.gitconfig]
+indent_style = space
+indent_size = 2
+
+# ============================================================
+# .NET code style (Roslyn analyzer)
+# ============================================================
+# Format preferences
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+dotnet_style_predefined_type_for_member_access = true:suggestion
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+dotnet_style_readonly_field = true:suggestion
+
+# Nullable analysis
+dotnet_diagnostic.CA8602.severity = suggestion  # Use 'ArgumentNullException.ThrowIfNull'
+dotnet_diagnostic.CA8603.severity = suggestion  # Use 'ArgumentNullException.ThrowIfNull' for validation
+
+# Performance
+dotnet_diagnostic.CA1848.severity = suggestion  # Use LoggerMessage delegates
+dotnet_diagnostic.CA1859.severity = suggestion  # Use concrete types
+
+# Naming conventions
+dotnet_naming_rule.interface_should_be_prefixed_with_i.symbols = interface
+dotnet_naming_rule.interface_should_be_prefixed_with_i.style = interface_style
+dotnet_naming_style.interface_style.capitalization = pascal_case
+dotnet_naming_style.interface_style.required_prefix = I
+
+dotnet_naming_rule.types_should_be_pascal_case.symbols = class, struct, interface, enum, delegate
+dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case_style
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+dotnet_naming_rule.methods_should_be_pascal_case.symbols = method
+dotnet_naming_rule.methods_should_be_pascal_case.style = pascal_case_style
+
+dotnet_naming_rule.properties_should_be_pascal_case.symbols = property
+dotnet_naming_rule.properties_should_be_pascal_case.style = pascal_case_style
+
+dotnet_naming_rule.fields_should_be_camel_case.symbols = field
+dotnet_naming_rule.fields_should_be_camel_case.style = camel_case_style
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+dotnet_naming_rule.parameters_should_be_camel_case.symbols = parameter
+dotnet_naming_rule.parameters_should_be_camel_case.style = camel_case_style
+
+dotnet_naming_rule.locals_should_be_camel_case.symbols = local
+dotnet_naming_rule.locals_should_be_camel_case.style = camel_case_style
+
+dotnet_naming_rule.constants_should_be_pascal_case.symbols = field, constant
+dotnet_naming_rule.constants_should_be_pascal_case.style = pascal_case_style
+dotnet_naming_rule.constants_should_be_pascal_case.filters = static, const, readonly
+
+# ============================================================
+# Specific overrides
+# ============================================================
+# Generated files - no analysis
+[*.g.cs]
+generated_code = true
+
+[*.Designer.cs]
+generated_code = true
+
+[*.generated.cs]
+generated_code = true

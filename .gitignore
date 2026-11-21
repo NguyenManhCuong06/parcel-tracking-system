@@ -164,18 +164,17 @@ desktop.ini
 
 # ------------------------------------------------------------
 # Tai lieu hoc tap & tai lieu noi bo (giu o local)
-# Khong commit: README, de tai, huong dan, phan tich, kien truc,
-# quy tac agent, bao cao va ghi chu ca nhan.
+# Khong commit: de tai, huong dan, phan tich, quy tac agent,
+# bao cao va ghi chu ca nhan.
 #
 # LUU Y: .gitignore chi co tac dung voi file CHUA duoc Git theo doi.
 # File da track phai duoc go bang: git rm --cached <file>
 # ------------------------------------------------------------
-README.md
 detai.md
 huongdan.md
 analysis.md
 AGENTS.md
-architecture.md
+quytac.md
 
 # Bao cao / ghi chu / tai lieu ca nhan
 report/
@@ -183,7 +182,6 @@ reports/
 bao-cao/
 notes/
 ghi-chu/
-docs/
 images/
 screenshots/
 
