@@ -1,22 +1,30 @@
-# .NET
+# ============================================================
+# Parcel Tracking System - .gitignore
+# Muc tieu: chi giu lai file can thiet cho build / cau hinh /
+# kiem thu / van hanh. Tai lieu ca nhan, bao cao, ghi chu va
+# moi thong tin bi mat deu phai nam o local.
+# ============================================================
+
+# ------------------------------------------------------------
+# .NET build output
+# ------------------------------------------------------------
 bin/
 obj/
-*.dll
-*.exe
-*.pdb
-
-# Build results
+[Bb]in/
+[Oo]bj/
 [Dd]ebug/
 [Rr]elease/
 x64/
 x86/
 bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+artifacts/
+*.dll
+*.exe
+*.pdb
 
+# ------------------------------------------------------------
 # Visual Studio
+# ------------------------------------------------------------
 .vs/
 *.suo
 *.tlb
@@ -25,6 +33,7 @@ bld/
 *.cache
 *.log
 *.user
+*.userprefs
 *.userosscache
 *.sln.docstates
 *.vcxproj.filters
@@ -37,82 +46,159 @@ bld/
 *.sdf
 *.sdf.bak
 
-# VS Code
+# ------------------------------------------------------------
+# VS Code / Rider / IDE
+# ------------------------------------------------------------
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-# Rider
 .idea/
 
-# Docker
-.dockerignore
-
-# Environment files
+# ------------------------------------------------------------
+# Environment files (chi giu file mau .env.example)
+# ------------------------------------------------------------
 .env
-.env.local
-.env.development
-.env.production
+.env.*
+!.env.example
 *.env
 
-# Secrets
+# ------------------------------------------------------------
+# Secrets / credentials (tuyet doi khong commit)
+# ------------------------------------------------------------
+secrets.json
+*.secret
+*.secrets
+.secrets/
+*.publishsettings
+
+# ------------------------------------------------------------
+# Certificates & private keys
+# ------------------------------------------------------------
 *.pem
 *.key
 *.crt
+*.cer
+*.der
 *.pfx
 *.p12
-secrets.json
+*.jks
+*.keystore
+*.snk
+*.ppk
+id_rsa*
+id_ed25519*
+.ssh/
+
+# ------------------------------------------------------------
+# App configuration
+# Chi giu appsettings.json mac dinh va cac file .example.
+# Moi appsettings.<Environment>.json duoc coi la cau hinh local
+# va co the chua connection string / thong tin xac thuc.
+# ------------------------------------------------------------
 appsettings.*.json
 !appsettings.json
 !appsettings.*.json.example
 
-# Database
+# ------------------------------------------------------------
+# Docker
+# Luu y: .dockerignore va Dockerfile PHAI duoc quan ly bang Git.
+# ------------------------------------------------------------
+docker-compose.override.yml
+docker-compose.*.local.yml
+
+# ------------------------------------------------------------
+# Database (file local, khong phai migration)
+# ------------------------------------------------------------
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 *.sqlite3
 *.mdf
 *.ldf
 
+# ------------------------------------------------------------
 # Logs
+# ------------------------------------------------------------
 *.log
 logs/
+[Ll]og/
+[Ll]ogs/
 
-# Test results
+# ------------------------------------------------------------
+# Test results / coverage
+# ------------------------------------------------------------
 TestResults/
 *.trx
 *.coverage
 *.coveragexml
+coverage*.json
+coverage*.xml
 
+# ------------------------------------------------------------
 # NuGet
+# ------------------------------------------------------------
 packages/
 *.nupkg
 *.snupkg
+project.lock.json
 
-# Temporary files
+# ------------------------------------------------------------
+# Temporary files / OS files
+# ------------------------------------------------------------
 *.tmp
 *.temp
 *~
 .~*
-
-# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Course materials (do not commit)
+# ------------------------------------------------------------
+# Git leftovers
+# ------------------------------------------------------------
+*.orig
+*.rej
+
+# ------------------------------------------------------------
+# Tai lieu hoc tap & tai lieu noi bo (giu o local)
+# Khong commit: README, de tai, huong dan, phan tich, kien truc,
+# quy tac agent, bao cao va ghi chu ca nhan.
+#
+# LUU Y: .gitignore chi co tac dung voi file CHUA duoc Git theo doi.
+# File da track phai duoc go bang: git rm --cached <file>
+# ------------------------------------------------------------
+README.md
 detai.md
 huongdan.md
-*.pdf
-*.docx
-*.pptx
+analysis.md
+AGENTS.md
+architecture.md
+
+# Bao cao / ghi chu / tai lieu ca nhan
 report/
+reports/
+bao-cao/
+notes/
+ghi-chu/
 docs/
 images/
 screenshots/
 
+# Tai lieu van phong (khong phuc vu build/van hanh)
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+
+# ------------------------------------------------------------
 # Backup
+# ------------------------------------------------------------
 *.bak
 *.backup
 *.old
